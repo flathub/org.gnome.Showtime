@@ -1,15 +1,8 @@
 {
   "id": "org.gnome.Showtime",
   "runtime": "org.gnome.Platform",
-  "runtime-version": "46",
+  "runtime-version": "47",
   "sdk": "org.gnome.Sdk",
-  "sdk-extensions": [
-    "org.freedesktop.Sdk.Extension.rust-stable",
-    "org.freedesktop.Sdk.Extension.llvm16"
-  ],
-  "build-options": {
-    "append-path": "/usr/lib/sdk/rust-stable/bin"
-  },
   "command": "showtime",
   "finish-args": [
     "--share=ipc",
@@ -21,7 +14,7 @@
   ],
   "add-extensions": {
     "org.freedesktop.Platform.ffmpeg-full": {
-      "version": "23.08",
+      "version": "24.08",
       "directory": "lib/ffmpeg",
       "add-ld-path": ".",
       "no-autodownload": false,
@@ -42,27 +35,6 @@
   ],
   "modules": [
     {
-      "name": "gst-plugin-gtk4",
-      "buildsystem": "simple",
-      "sources": [
-        {
-          "type": "archive",
-          "url": "https://crates.io/api/v1/crates/gst-plugin-gtk4/0.12.5/download",
-          "dest-filename": "gst-plugin-gtk4-0.12.5.tar.gz",
-          "sha256": "56e483cb1452f056ae94ccd5f63bdec697e04c87b30d89eb30c3f934042e1022"
-        },
-        "gst-plugin-gtk4-sources.json"
-      ],
-      "build-commands": [
-        "cargo cinstall --offline --release --features=wayland,x11glx,x11egl,gtk_v4_14 --library-type=cdylib --prefix=/app --libdir=/app/lib"
-      ],
-      "build-options": {
-        "env": {
-          "CARGO_HOME": "/run/build/gst-plugin-gtk4/cargo"
-        }
-      }
-    },
-    {
       "name": "blueprint-compiler",
       "buildsystem": "meson",
       "sources": [
@@ -82,7 +54,8 @@
         {
           "type": "git",
           "url": "https://gitlab.gnome.org/GNOME/Incubator/showtime.git",
-          "tag": "46.3"
+          "tag": "47.0",
+          "commit": "5ca2d22f049c4349404dc9e0afcc909c91b2d7f3"
         }
       ]
     }
