@@ -54,8 +54,7 @@
         {
           "type": "git",
           "url": "https://gitlab.gnome.org/GNOME/Incubator/showtime.git",
-          "tag": "47.0",
-          "commit": "5ca2d22f049c4349404dc9e0afcc909c91b2d7f3"
+          "commit": "db8510a6c91aef7e92c4e37d256f41a7450a6e17"
         }
       ]
     }
