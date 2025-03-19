@@ -41,7 +41,12 @@
         {
           "type": "git",
           "url": "https://gitlab.gnome.org/jwestman/blueprint-compiler",
-          "tag": "v0.16.0"
+          "tag": "v0.16.0",
+          "x-checker-data": {
+            "type": "git",
+            "url": "https://gitlab.gnome.org/jwestman/blueprint-compiler",
+            "tag-pattern": "^(v[\\d]+\\.\\d*[02468][\\d.]*)$"
+          }
         }
       ],
       "cleanup": ["*"]
@@ -73,7 +78,12 @@
           "type": "git",
           "url": "https://gitlab.gnome.org/GNOME/Incubator/showtime.git",
           "tag": "48.0",
-          "commit": "d35bff5a868438f17ae874e92b910da03b9e99e5"
+          "commit": "d35bff5a868438f17ae874e92b910da03b9e99e5",
+          "x-checker-data": {
+            "type": "gnome",
+            "is-important": true,
+            "name": "showtime"
+          }
         }
       ]
     }
