@@ -75,10 +75,9 @@
       "buildsystem": "meson",
       "sources": [
         {
-          "type": "git",
-          "url": "https://gitlab.gnome.org/GNOME/Incubator/showtime.git",
-          "tag": "48.0",
-          "commit": "d35bff5a868438f17ae874e92b910da03b9e99e5",
+          "type": "archive",
+          "url": "https://download.gnome.org/sources/showtime/48/showtime-48.0.tar.xz",
+          "sha256": "03e5e62b37d3a7d34344b9b0c8805dd041987a7305bd70e4c596bc4ccaec30e4",
           "x-checker-data": {
             "type": "gnome",
             "is-important": true,
