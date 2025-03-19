@@ -1,7 +1,7 @@
 {
   "id": "org.gnome.Showtime",
   "runtime": "org.gnome.Platform",
-  "runtime-version": "47",
+  "runtime-version": "48",
   "sdk": "org.gnome.Sdk",
   "command": "showtime",
   "finish-args": [
@@ -47,6 +47,23 @@
       "cleanup": ["*"]
     },
     {
+      "name": "gstreamer",
+      "buildsystem": "meson",
+      "config-opts": [
+        "-Dexamples=disabled",
+        "-Dbenchmarks=disabled",
+        "-Dintrospection=enabled"
+      ],
+      "sources": [
+        {
+          "type": "git",
+          "url": "https://gitlab.freedesktop.org/gstreamer/gstreamer.git",
+          "tag": "1.26.0",
+          "commit": "d31ce8e5e1aacf8f5e5beabb5c81ce2e4da5c202"
+        },
+      ]
+    },
+    {
       "name": "showtime",
       "builddir": true,
       "buildsystem": "meson",
@@ -54,7 +71,8 @@
         {
           "type": "git",
           "url": "https://gitlab.gnome.org/GNOME/Incubator/showtime.git",
-          "commit": "db8510a6c91aef7e92c4e37d256f41a7450a6e17"
+          "tag": "48.0",
+          "commit": "d35bff5a868438f17ae874e92b910da03b9e99e5"
         }
       ]
     }
