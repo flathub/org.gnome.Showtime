@@ -1,90 +1,95 @@
 {
-  "id": "org.gnome.Showtime",
-  "runtime": "org.gnome.Platform",
-  "runtime-version": "48",
-  "sdk": "org.gnome.Sdk",
-  "command": "showtime",
-  "finish-args": [
-    "--share=ipc",
-    "--socket=fallback-x11",
-    "--device=dri",
-    "--socket=wayland",
-    "--socket=pulseaudio",
-    "--filesystem=xdg-pictures/Screenshots:create"
-  ],
-  "add-extensions": {
-    "org.freedesktop.Platform.ffmpeg-full": {
-      "version": "24.08",
-      "directory": "lib/ffmpeg",
-      "add-ld-path": ".",
-      "no-autodownload": false,
-      "autodelete": false
-    }
-  },
-  "cleanup-commands": ["mkdir -p ${FLATPAK_DEST}/lib/ffmpeg"],
-  "cleanup": [
-    "/include",
-    "/lib/pkgconfig",
-    "/man",
-    "/share/doc",
-    "/share/gtk-doc",
-    "/share/man",
-    "/share/pkgconfig",
-    "*.la",
-    "*.a"
-  ],
-  "modules": [
-    {
-      "name": "blueprint-compiler",
-      "buildsystem": "meson",
-      "sources": [
-        {
-          "type": "git",
-          "url": "https://gitlab.gnome.org/jwestman/blueprint-compiler",
-          "tag": "v0.16.0",
-          "x-checker-data": {
-            "type": "git",
-            "url": "https://gitlab.gnome.org/jwestman/blueprint-compiler",
-            "tag-pattern": "^(v[\\d]+\\.\\d*[02468][\\d.]*)$"
-          }
+    "id": "org.gnome.Showtime",
+    "runtime": "org.gnome.Platform",
+    "runtime-version": "48",
+    "sdk": "org.gnome.Sdk",
+    "command": "showtime",
+    "finish-args": [
+        "--share=ipc",
+        "--socket=fallback-x11",
+        "--device=dri",
+        "--socket=wayland",
+        "--socket=pulseaudio",
+        "--filesystem=xdg-pictures/Screenshots:create"
+    ],
+    "add-extensions": {
+        "org.freedesktop.Platform.ffmpeg-full": {
+            "version": "24.08",
+            "directory": "lib/ffmpeg",
+            "add-ld-path": ".",
+            "no-autodownload": false,
+            "autodelete": false
         }
-      ],
-      "cleanup": ["*"]
     },
-    {
-      "name": "gstreamer",
-      "buildsystem": "meson",
-      "config-opts": [
-        "-Dexamples=disabled",
-        "-Dbenchmarks=disabled",
-        "-Dintrospection=enabled"
-      ],
-      "sources": [
+    "cleanup-commands": [
+        "mkdir -p ${FLATPAK_DEST}/lib/ffmpeg"
+    ],
+    "cleanup": [
+        "/include",
+        "/lib/pkgconfig",
+        "/man",
+        "/share/doc",
+        "/share/gtk-doc",
+        "/share/man",
+        "/share/pkgconfig",
+        "*.la",
+        "*.a"
+    ],
+    "modules": [
         {
-          "type": "git",
-          "url": "https://gitlab.freedesktop.org/gstreamer/gstreamer.git",
-          "tag": "1.26.0",
-          "commit": "d31ce8e5e1aacf8f5e5beabb5c81ce2e4da5c202",
-          "disable-submodules": true
-        }
-      ]
-    },
-    {
-      "name": "showtime",
-      "builddir": true,
-      "buildsystem": "meson",
-      "sources": [
+            "name": "blueprint-compiler",
+            "buildsystem": "meson",
+            "sources": [
+                {
+                    "type": "git",
+                    "url": "https://gitlab.gnome.org/jwestman/blueprint-compiler",
+                    "tag": "v0.16.0",
+                    "x-checker-data": {
+                        "type": "git",
+                        "url": "https://gitlab.gnome.org/jwestman/blueprint-compiler",
+                        "tag-pattern": "^(v[\\d]+\\.\\d*[02468][\\d.]*)$"
+                    },
+                    "commit": "04ef0944db56ab01307a29aaa7303df6067cb3c0"
+                }
+            ],
+            "cleanup": [
+                "*"
+            ]
+        },
         {
-          "type": "archive",
-          "url": "https://download.gnome.org/sources/showtime/48/showtime-48.0.tar.xz",
-          "sha256": "03e5e62b37d3a7d34344b9b0c8805dd041987a7305bd70e4c596bc4ccaec30e4",
-          "x-checker-data": {
-            "type": "gnome",
-            "is-important": true,
-            "name": "showtime"
-          }
+            "name": "gstreamer",
+            "buildsystem": "meson",
+            "config-opts": [
+                "-Dexamples=disabled",
+                "-Dbenchmarks=disabled",
+                "-Dintrospection=enabled"
+            ],
+            "sources": [
+                {
+                    "type": "git",
+                    "url": "https://gitlab.freedesktop.org/gstreamer/gstreamer.git",
+                    "tag": "1.26.0",
+                    "commit": "d31ce8e5e1aacf8f5e5beabb5c81ce2e4da5c202",
+                    "disable-submodules": true
+                }
+            ]
+        },
+        {
+            "name": "showtime",
+            "builddir": true,
+            "buildsystem": "meson",
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://download.gnome.org/sources/showtime/48/showtime-48.0.tar.xz",
+                    "sha256": "03e5e62b37d3a7d34344b9b0c8805dd041987a7305bd70e4c596bc4ccaec30e4",
+                    "x-checker-data": {
+                        "type": "gnome",
+                        "is-important": true,
+                        "name": "showtime"
+                    }
+                }
+            ]
         }
-      ]
-    }
-  ]
+    ]
 }
