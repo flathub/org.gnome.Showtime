@@ -59,7 +59,8 @@
           "type": "git",
           "url": "https://gitlab.freedesktop.org/gstreamer/gstreamer.git",
           "tag": "1.26.0",
-          "commit": "d31ce8e5e1aacf8f5e5beabb5c81ce2e4da5c202"
+          "commit": "d31ce8e5e1aacf8f5e5beabb5c81ce2e4da5c202",
+          "disable-submodules": true
         }
       ]
     },
