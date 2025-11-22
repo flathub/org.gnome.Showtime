@@ -31,8 +31,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://download.gnome.org/sources/showtime/49/showtime-49.0.tar.xz",
-                    "sha256": "5abcaf97ab5e9530038282848588e8ce6c26173b7303ef6756bebdb0b20ed398",
+                    "url": "https://download.gnome.org/sources/showtime/49/showtime-49.1.tar.xz",
+                    "sha256": "8aefbb0e2009c7a1cd44ab801b06ca375f7e9683f029a052eb86fb433a785393",
                     "x-checker-data": {
                         "type": "gnome",
                         "is-important": true,
