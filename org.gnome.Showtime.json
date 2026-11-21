@@ -30,8 +30,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://download.gnome.org/sources/showtime/50/showtime-50.0.tar.xz",
-                    "sha256": "4399c9fa7f61e5984242e279acd1519beec246b98a676d44a4b2ab94e9eecb01",
+                    "url": "https://download.gnome.org/sources/showtime/50/showtime-50.1.tar.xz",
+                    "sha256": "c04fcdc9f810a8b23db336b496707a99023d9cf37c9417b1723c160198752e52",
                     "x-checker-data": {
                         "type": "gnome",
                         "is-important": true,
